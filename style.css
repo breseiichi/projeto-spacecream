@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff-heading: 'Staatliches', cursive;
+  --ff-text: 'Palanquin', sans-serif;
+
+  --bg-header: #8E9AAF;
+  --bg-title: #CBC0D3;
+  --bg-main: #EFF1FF;
+  --bg-subtitle: #FEEAFA;
+
+  --color-title: #FFFFFF;
+  --color-text: #23053A;
+  --color-subtitle: #4A4E69;
+}
+
+body {
+  background: var(--bg-main);
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 400;
+
+  color: var(--color-title);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+h1, h2 {
+  font-family: var(--ff-heading);
+  letter-spacing: 0.05em;
+  line-height: 3.4rem;
+}
+
+header {
+  background: var(--bg-header);
+  text-align: center;
+  padding: 3.2rem 0 2.5rem;
+}
+
+.title {
+  background: var(--bg-title);
+  margin-top: 2rem;
+  margin-bottom: 2.9rem;
+  padding: 0.8rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo2 {
+  margin-bottom: 1.5rem;
+  transition: 500ms;
+}
+
+#logo2:hover {
+  transform: scale(1.2);
+}
+
+.text p {
+  font-family: var(--ff-text);
+  font-size: 1.5rem;
+  color: var(--color-text);
+
+  text-align: center;
+  line-height: 1.5rem;
+  padding: 2rem 4rem; 
+}
+
+.text-desktop {
+  display: none;
+}
+
+.cards {
+  display: grid;
+  gap: 3.2rem;
+  width: 60%;
+  animation: topdown 600ms;
+}
+
+.cards .card {
+  position: relative;
+  transition: 350ms;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.card:nth-child(3) {
+  display:none
+}
+
+.card:nth-child(5) {
+  display: none;
+}
+
+.cards .card h2 {
+  font-family: var(--ff-heading);
+  font-weight: 400;
+  font-size: 2rem;
+
+  color: var(--color-subtitle);
+  background: var(--bg-subtitle);
+
+  line-height: 3.5rem;
+  letter-spacing: 0.05em;
+
+  position: absolute;
+  border-radius: 2rem;
+
+  top: 1.6rem;
+  right: 1.6rem;
+  width: fit-content;
+  padding: 0 2.4rem;
+
+  animation-name: side;
+  animation-duration: 1s;
+}
+
+.cards .card img {
+  width: 100%;
+}
+
+footer {
+  display: none;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes side {
+  0% {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transition: translateX(-60rem);
+  }
+
+  100% {
+    opacity: 1;
+    transition: translateX(0);
+  }
+}
+
+@media (min-width:900px) {
+  .page {
+    display: flex;
+  }
+
+  header {
+    width: 37.7rem;
+   /* width: 30%;*/
+    height: 100vh;
+    position: fixed; /*ao rolar a pag, a parte do header continua aparecendo*/
+    animation: SlideIn 700ms 250ms backwards;
+  }
+
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .text-desktop {
+    position: absolute;
+    width: 27.5rem;
+    height: 26.2rem;
+    left: 54px;
+    top: 333px;
+    margin-top: 2rem;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+
+    padding: 0 1rem;
+
+    display: flex;
+    align-items: center;
+    position: absolute;
+    color: var(--color-title);
+  }
+
+  .card:nth-child(3) {
+    display:block;
+  }
+  
+  .card:nth-child(5) {
+    display: block;
+  }
+
+  .cards {
+   margin-left: 40rem;
+   margin-top: 2rem;
+
+   grid-template-areas: 
+   "A B"
+   "C B"
+   "C D"
+   "E F";
+  }
+   
+   .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards .card:nth-child(4) {
+    grid-area: C;
+  }
+
+  .cards .card:nth-child(5) {
+    grid-area: F;
+  }
+
+  .cards .card:nth-child(3) {
+    grid-area: D;
+  }
+
+  .cards .card:nth-child(6) {
+    grid-area: E;
+  }
+
+  footer {
+    display: block; /*para o footer aparecer na pagina, isso serviria para o logo casoeu quisss trocar mobile-desktop*/
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.8rem;
+    color: var(--color-subtitle);
+
+    text-align: center;
+ 
+
+    margin-top: 5rem;
+    margin-left: 40rem;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: var(--color-subtitle);
+    font-weight: 700;
+  }
+
+  #logo {
+    display: none;
+  }
+}
+
+@media (min-width:1300px) {
+  .cards {
+    grid-template-areas: 
+    "A B C"
+    "D B E"
+    "D F E";
+  }
+
+  .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards .card:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards .card:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards .card:nth-child(5) {
+    grid-area: E;
+  }
+
+  .cards .card:nth-child(6) {
+    grid-area: F;
+  }
+}
