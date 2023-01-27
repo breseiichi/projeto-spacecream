@@ -21,12 +21,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - CSS
 - Figma
 
-<br>
 
 ## 💻 Projeto
 
 - [Visite o projeto online](https://breseiichi.github.io/projeto-spacecream/)
-<br>
 
 
 ## 🔖 Layout
